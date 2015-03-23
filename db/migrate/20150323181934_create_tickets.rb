@@ -3,7 +3,7 @@ class CreateTickets < ActiveRecord::Migration
     create_table :tickets do |t|
       t.string :current_location
       t.string :destination
-      t.text :class
+      t.text :ticket_class
       t.text :airline
       t.text :booking_reference
       t.integer :baggage_allowance
@@ -12,7 +12,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string :gate
       t.time :gate_opening_time
       t.time :gate_closing_time
-      t.boolean :return
+      t.boolean :round_trip
       t.integer :price
       t.integer :package_id
 

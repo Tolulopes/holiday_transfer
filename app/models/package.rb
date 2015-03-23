@@ -1,4 +1,4 @@
 class Package < ActiveRecord::Base
-  has_many :tickets
+  has_one :ticket
   belongs_to :user
 end

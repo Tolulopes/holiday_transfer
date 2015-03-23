@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150323181934) do
   create_table "tickets", force: :cascade do |t|
     t.string   "current_location"
     t.string   "destination"
-    t.text     "class"
+    t.text     "ticket_class"
     t.text     "airline"
     t.text     "booking_reference"
     t.integer  "baggage_allowance"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150323181934) do
     t.string   "gate"
     t.time     "gate_opening_time"
     t.time     "gate_closing_time"
-    t.boolean  "return"
+    t.boolean  "round_trip"
     t.integer  "price"
     t.integer  "package_id"
     t.datetime "created_at",        null: false
