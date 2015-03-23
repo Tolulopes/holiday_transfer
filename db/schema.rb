@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323163921) do
+ActiveRecord::Schema.define(version: 20150323181934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20150323163921) do
     t.integer  "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string   "current_location"
+    t.string   "destination"
+    t.text     "class"
+    t.text     "airline"
+    t.text     "booking_reference"
+    t.integer  "baggage_allowance"
+    t.datetime "departure_time"
+    t.datetime "arrival_time"
+    t.string   "gate"
+    t.time     "gate_opening_time"
+    t.time     "gate_closing_time"
+    t.boolean  "return"
+    t.integer  "price"
+    t.integer  "package_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
