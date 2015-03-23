@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :packages
-
+  resources :tickets
   devise_for :users
   get 'users/index'
 
