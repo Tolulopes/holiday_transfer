@@ -1,34 +1,40 @@
-<h1>ticket show </h1>
+<h1>ticket show / Ticket Information </h1>
 
+<strong>Flying From:</strong>
 <p><%= @ticket.current_location %></p>
 
+<strong>Flying To:</strong>
 <p><%= @ticket.destination %></p>
 
-<p><%= @ticket.class %></p>
+<strong>Class:</strong>
+<p><%= @ticket.ticket_class %></p>
 
+<strong>Flying With:</strong>
 <p><%= @ticket.airline %></p>
 
+<strong>Booking Reference:</strong>
 <p><%= @ticket.booking_reference %></p>
 
+<strong>Baggage Allowance:</strong>
 <p><%= @ticket.baggage_allowance %></p>
 
+<strong>Departure Time:</strong>
+<p><%= @ticket.departure_time %></p>
+
+<strong>Arrival Time:</strong>
 <p><%= @ticket.arrival_time %></p>
 
+<strong>Gate Number:</strong>
 <p><%= @ticket.gate %></p>
 
+<strong>Gate Opening Time:</strong>
 <p><%= @ticket.gate_opening_time %></p>
 
+<strong>Gate Closing Time:</strong>
 <p><%= @ticket.gate_closing_time %></p>
 
+<strong>Round Trip:</strong>
 <p><%= @ticket.round_trip %></p>
 
+<strong>Price:</strong>
 <p><%= @ticket.price %></p>
-
-
-
-
-(current_location: 'London', destination: 'Dubai', ticket_class: 'business' , airline: 'Virgin Atlantic', booking_reference: 'v1456', baggage_allowance: '23', departure_time: '2204201509:00', arrival_time: '16:00', gate: 'G14', gate_opening_time: '08:00', gate_closing_time: '08:50', round_trip: true, price: 1200, package_id: p1.id)
-
-
-
-<%= @ticket.id %>
