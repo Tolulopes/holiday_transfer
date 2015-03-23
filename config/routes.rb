@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'packages/index'
+
+  get 'packages/show'
+
   get 'users/index'
 
   devise_for :users
