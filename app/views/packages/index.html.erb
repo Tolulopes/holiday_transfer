@@ -16,6 +16,7 @@
       <th>Destination</th>
       <th>Description</th>
       <th>Price</th>
+      <th>Attraction</th>
       <th>Purchase</th>
       <th colspan="3"></th>
     </tr>
@@ -27,10 +28,13 @@
       <td><%= package.ticket.destination %></td>
       <td><%= package.description %></td>
       <td><%= package.ticket.price %></td>
+      <% package.attractions.each do |attraction| %>
+      <td><%= attraction.name %></td>
       <td></td>
       <td></td>
 
     </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
