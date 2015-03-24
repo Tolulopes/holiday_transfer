@@ -9,6 +9,7 @@ User.delete_all
 Package.delete_all
 Ticket.delete_all
 Attraction.delete_all
+Hotel.delete_all
 
 u1 = User.create(first_name: 'Tolu', email: 'Tolu@me.com', password: 'password', password_confirmation: 'password')
 u2 = User.create(first_name: 'David', email: 'David@me.com', password: 'password', password_confirmation: 'password')
@@ -29,6 +30,7 @@ a1 = Attraction.create(name: 'Desert Excursion' , description: 'Camel Rides & Qu
 
 a2 = Attraction.create(name: 'Bora Bora Dream' , description: 'Love Boat Ride' , location: 'Tourquise Lagoon' , date: '2015-05-30-13:00', package_id: p2.id)
 
+h1 = Hotel.create(name: 'Jumeirah Beach Hotel' , address: 'Jumeirah Beach Hotel Jumeirah Dubai United Arab Emirates' , checkin: '2015-04-22-15:00', checkout: '2014-04-30-12:00' , stars: '5' , package_id: p1.id)
 
 
 puts 'seeded it'
