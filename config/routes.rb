@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :packages
   resources :tickets
+  resources :attractions
   devise_for :users
   get 'users/index'
 
