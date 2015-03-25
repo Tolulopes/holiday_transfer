@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150325200226) do
     t.integer  "package_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.float    "Longitude"
-    t.float    "Latitude"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "destinations", force: :cascade do |t|
