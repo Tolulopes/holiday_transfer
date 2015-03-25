@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324225550) do
+ActiveRecord::Schema.define(version: 20150325110727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20150324225550) do
     t.integer  "package_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "destinations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "hotels", force: :cascade do |t|
@@ -41,22 +47,20 @@ ActiveRecord::Schema.define(version: 20150324225550) do
     t.integer  "user_id"
     t.text     "description"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "status",      default: "Available"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "tickets", force: :cascade do |t|
     t.string   "current_location"
-    t.string   "destination"
+    t.integer  "destination_id"
     t.text     "ticket_class"
     t.text     "airline"
     t.text     "booking_reference"
     t.integer  "baggage_allowance"
     t.datetime "departure_time"
     t.datetime "arrival_time"
-    t.string   "gate"
-    t.time     "gate_opening_time"
-    t.time     "gate_closing_time"
     t.boolean  "round_trip"
     t.integer  "price"
     t.integer  "package_id"

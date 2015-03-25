@@ -4,6 +4,7 @@ class CreatePackages < ActiveRecord::Migration
       t.integer :user_id
       t.text :description
       t.integer :price
+      t.string :status, :default => 'Available'
 
       t.timestamps null: false
     end

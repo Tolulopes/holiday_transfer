@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'destination/index'
+
+  get 'destination/show'
+
   resources :packages
   resources :tickets
   resources :attractions
