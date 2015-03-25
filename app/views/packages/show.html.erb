@@ -4,13 +4,19 @@
 <p>Find me in app/views/packages/show.html.erb</p>
 
 <strong>Ticker Owner</strong>
-<%= @package.user.first_name %><br>
+  <%= @package.user.first_name %><br>
 
 <strong>Package:</strong>
-<%= @package.description %><br>
+  <%= @package.description %><br>
 
 <strong>Price:</strong>
-<%= @package.price %><br>
+  <%= @package.price %><br>
+
+<strong>Hotel:</strong>
+  <%= @package.hotel.name %><br>
+
+<strong>Attractions:</strong>
+  <%= @package.attractions %><br>
 
 <strong>Map:</strong>
 <p>Map with points of interest will go here </p>
