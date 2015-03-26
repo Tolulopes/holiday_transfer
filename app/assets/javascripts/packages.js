@@ -35,10 +35,11 @@
 $(document).ready(function() {
        $('.rotate').rotaterator({fadeSpeed:500, pauseSpeed:100});
 
-       handler = Gmaps.build('Google');
-       handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-         markers = handler.addMarkers($("#map").data("json"));
-         handler.bounds.extendWith(markers);
-         handler.fitMapToBounds();
-       });
+       // handler = Gmaps.build('Google');
+       // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+       //   markers = handler.addMarkers($("#map").data("json"));
+       //   console.log(handler,markers)
+       //   handler.bounds.extendWith(markers);
+       //   handler.fitMapToBounds();
+       // });
 });
