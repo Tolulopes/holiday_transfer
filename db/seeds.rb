@@ -28,7 +28,10 @@ t1 = Ticket.create(current_location: 'London', destination_id: d1.id, ticket_cla
 
 t2 = Ticket.create(current_location: 'London', destination_id: d2.id, ticket_class: 'First' , airline: 'British Airways', booking_reference: 'ba986', baggage_allowance: '23', departure_time: '2015-05-29-09:00', arrival_time: '2015-05-30 10:00', round_trip: true, price: 3500, package_id: p2.id)
 
-a1 = Attraction.create(name: 'Desert Excursion' , description: 'Camel Rides & Quadbiking' , location: 'Golden Desert Dubai' , date: '2015-04-22-14:00', package_id: p1.id, image: 'camel.jpg')
+a1 = Attraction.create(name: 'Desert Excursion' , description: 'Camel Rides & Quadbiking' , location: 'Golden Desert Dubai' , date: '2015-04-22-14:00', package_id: p1.id)
+
+a1.image = File.open(Rails.root + 'app/seed_images/camel.jpg')
+a1.save!
 
 a2 = Attraction.create(name: 'Bora Bora Dream' , description: 'Love Boat Ride' , location: 'Tourquise Lagoon' , date: '2015-05-30-13:00', package_id: p2.id)
 
