@@ -15,9 +15,12 @@
 <strong>Hotel:</strong>
   <%= @package.hotel.name %><br>
 
-<strong>Attractions:</strong>
-  <%= @package.attractions %><br>
-
+<strong>Attraction:</strong>
+<ul>
+  <% @package.attractions.each do |attraction| %>
+    <li><%= attraction.name %>:  <%= attraction.description %></li>
+  <% end %>
+  </ul>
 <strong>Map:</strong>
 <p>Map with points of interest will go here </p>
 

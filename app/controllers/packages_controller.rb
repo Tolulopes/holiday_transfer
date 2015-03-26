@@ -15,15 +15,3 @@ end
 
 
 
-#   def new
-#     @ticket = Ticket.new
-#   end
-
-
-#   # def edit
-#   #   @ticket Ticket.find(params[:id])
-#   # end
-
-#   def create
-#     @ticket = Ticket.new(ticket_params)
-# end
