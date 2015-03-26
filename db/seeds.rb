@@ -35,7 +35,7 @@ a1 = Attraction.create(name: 'Desert Excursion' , description: 'Camel Rides & Qu
 
 a2 = Attraction.create(name: 'Bora Bora Dream' , description: 'Love Boat Ride' , location: 'Tourquise Lagoon' , date: '2015-05-30-13:00', package_id: p2.id, image: "camel.jpg")
 
-a3 = Attraction.create(name: 'Palm Hotel' , description: 'Fancy Lunch' , location: 'palm beach dubai' , date: '2015-04-24-14:00', package_id: p1.id, image: "camel.jpg")
+a3 = Attraction.create(name: 'Palm Beach Hotel' , description: 'Fancy Lunch' , location: 'palm beach dubai' , date: '2015-04-24-14:00', package_id: p1.id, image: "camel.jpg")
 
 h1 = Hotel.create(name: 'Jumeirah Beach Hotel' , address: 'Jumeirah Beach Hotel Jumeirah Dubai United Arab Emirates' , checkin: '2015-04-22-15:00', checkout: '2014-04-30-12:00' , stars: '5' , package_id: p1.id)
 
