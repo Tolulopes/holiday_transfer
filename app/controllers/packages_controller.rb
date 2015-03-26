@@ -10,6 +10,11 @@ class PackagesController < ApplicationController
       marker.lat attraction.latitude
       marker.lng attraction.longitude
     end
+    def gmaps4rails_infowindow
+      @json = Package.all.to_gmaps4rails do |attraction, marker|
+        marker.json "\"id\": #{attraction.name}, \"foo\": #{attraction.description}"
+      end
+    end
   end
 end
 
