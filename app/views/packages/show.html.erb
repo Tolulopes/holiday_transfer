@@ -31,6 +31,7 @@
 <script>
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    console.log(<%=raw @hash.to_json %>)
     markers = handler.addMarkers(<%=raw @hash.to_json %>)
     console.log(handler,markers)
     handler.bounds.extendWith(markers);

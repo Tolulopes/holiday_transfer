@@ -38,11 +38,11 @@ t2 = Ticket.create(current_location: 'London', destination_id: d2.id, ticket_cla
 a1 = Attraction.create(name: 'Desert Excursion' , description: 'Camel Rides & Quadbiking' , location: 'Golden Desert Dubai' , date: '2015-04-22-14:00', package_id: p1.id, image: "camel.jpg")
 
 
-a2 = Attraction.create(name: 'BoraBora Dream' , description: 'Love Boat Ride' , location: 'Tourquise Lagoon' , date: '2015-05-30-13:00', package_id: p2.id, image: "boat.jpeg")
+a2 = Attraction.create(name: 'BoraBora Dream' , description: 'Love Boat Ride' , location: 'Four Seasons Resort Bora Bora' , date: '2015-05-30-13:00', package_id: p2.id, image: "boat.jpeg")
 
 a3 = Attraction.create(name: 'Palm Beach Hotel' , description: 'Champagne Buffet' , location: 'Palm Beach Dubai' , date: '2015-04-24-14:00', package_id: p1.id, image: "palm.jpeg")
 
-a4 = Attraction.create(name: 'Aqua Bike' , description: 'UnderWater Experience' , location: 'Aqua Bike Adventure', date: '2015-06-1-09:30', package_id: p2.id, image: "bike.jpeg")
+a4 = Attraction.create(name: 'Aqua Bike' , description: 'UnderWater Experience' , location: 'AQUABIKE ADVENTURE', date: '2015-06-1-09:30', package_id: p2.id, image: "bike.jpeg")
 
 h1 = Hotel.create(name: 'Jumeirah Beach Hotel' , address: 'Jumeirah Beach Hotel Jumeirah Dubai United Arab Emirates' , checkin: '2015-04-22-15:00', checkout: '2014-04-30-12:00' , stars: '5' , package_id: p1.id)
 

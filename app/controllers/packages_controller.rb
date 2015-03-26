@@ -16,6 +16,7 @@ class PackagesController < ApplicationController
       #        "width" =>  32,
       #        "height" => 32})
     end
+    # binding.pry
   end
 end
 
