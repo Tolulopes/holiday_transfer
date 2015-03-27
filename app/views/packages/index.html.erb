@@ -1,6 +1,7 @@
 <h1>Packages#index</h1>
 <p>Find me in app/views/packages/index.html.erb</p>
 
+<%= link_to "Sell Ticket", new_ticket_path %>
 <h1>Package Listing</h1>
 <table>
   <thead>
@@ -23,7 +24,7 @@
       <td><%= package.ticket.price %></td>
       <% package.attractions.each do |attraction| %>
       <td><%= attraction.name %></td>
-      <td></td>
+      <td><%= package.status %></td>
       <td></td>
     </tr>
       <% end %>
