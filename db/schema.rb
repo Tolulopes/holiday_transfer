@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150326150806) do
     t.datetime "departure_time"
     t.datetime "arrival_time"
     t.boolean  "round_trip"
-    t.integer  "price"
+    t.float    "price"
     t.integer  "package_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false

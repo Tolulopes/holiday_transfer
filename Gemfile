@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

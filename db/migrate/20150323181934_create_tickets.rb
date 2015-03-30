@@ -10,7 +10,7 @@ class CreateTickets < ActiveRecord::Migration
       t.datetime :departure_time
       t.datetime :arrival_time
       t.boolean :round_trip
-      t.integer :price
+      t.float :price
       t.integer :package_id
 
       t.timestamps null: false
