@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   resources :attractions
   resources :destinations
   resources :hotels
+  resources :charges
   devise_for :users
   get 'users/index'
-
+  post 'packages/sell_my_package'=> 'packages#sell_my_package'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

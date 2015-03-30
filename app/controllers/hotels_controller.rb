@@ -12,3 +12,4 @@ class HotelsController < ApplicationController
     @hotel = Hotel.create
   end
 end
+
