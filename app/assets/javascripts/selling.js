@@ -1,4 +1,5 @@
 sellTicket = function(){
+  $('#destination_name').val()
  data = {
 
  }
