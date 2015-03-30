@@ -37,7 +37,9 @@ def sell_my_package
   @hotel.package_id = @package.id
   @hotel.save
   render json: {destination: @destination, package:@package, attraction:@attraction, hotel:@hotel, ticket:@ticket}
+  redirect_to packages_path
 end
+
 
 end
 
