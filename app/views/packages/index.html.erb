@@ -21,7 +21,7 @@
       <td><%= package.ticket.airline %></td>
       <td><%= link_to package.ticket.destination.name, package %></td>
       <td><%= package.description %></td>
-      <td><%= package.ticket.price %></td>
+      <td>£<%= package.ticket.price %></td>
       <% package.attractions.each do |attraction| %>
       <td><%= attraction.name %></td>
       <td><%= package.status %></td>
