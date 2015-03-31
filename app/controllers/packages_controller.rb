@@ -29,9 +29,12 @@ def sell_my_package
   @package = Package.create(params.require(:package).permit(:description, :price, :user_id, :status))
   @package.user_id = current_user.id
   @package.save
-  @attraction = Attraction.create(params.require(:attractions).permit(:name, :description, :location, :date, :package_id))
-  @attraction.package_id = @package.id
-  @attraction.save
+  @attraction_1 = Attraction.create(params.require(:attractions_1).permit(:name, :description, :location, :date, :package_id))
+  @attraction_1.package_id = @package.id
+  @attraction_1.save
+  @attraction_2 = Attraction.create(params.require(:attractions_2).permit(:name, :description, :location, :date, :package_id))
+  @attraction_2.package_id = @package.id
+  @attraction_2.save
   @ticket = Ticket.create(params.require(:ticket).permit(:current_location, :destination_id, :ticket_class, :airline, :booking_reference, :baggage_allowance, :departure_time, :arrival_time, :round_trip, :price, :package_id))
   @ticket.destination_id = @destination.id
   @ticket.package_id = @package.id
@@ -39,7 +42,7 @@ def sell_my_package
   @hotel = Hotel.create(params.require(:hotel).permit(:name, :address, :checkin, :checkout, :stars, :package_id))
   @hotel.package_id = @package.id
   @hotel.save
-  render json: {destination: @destination, package:@package, attraction:@attraction, hotel:@hotel, ticket:@ticket}
+  render json: {destination: @destination, package:@package, attraction_1:@attraction_1, attraction_2:@attraction_2, hotel:@hotel, ticket:@ticket}
 end
 
 
