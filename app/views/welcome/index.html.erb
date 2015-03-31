@@ -9,23 +9,30 @@
 
   <% content_for :body do %>
   <body id = "welcome_index" >
-  <% end %>
+    <% end %>
 
     <h1 class="welcome"><div class="rotate">Travel To <span class="rwelcome">Spain</span> <span class="rwelcome">Dubai</span> <span class="rwelcome">BoraBora</span> <span class="rwelcome">Dubai</span> With Holiday Transfer</h1>
 
-  <div class="transfer">
-  <%= link_to 'TransferUrHoliday', new_user_session_path %>
-  </div>
+    <div class="transfer">
+      <%= link_to 'TransferUrHoliday', new_user_session_path %>
+    </div>
 
-
-  <!-- click to bring the slideshow in and out of fullscreen mode -->
-    <figure id="slideshow">
+    <div class="slideShowContainer">
+      <ul class="slideshow">
+        <li><%= image_tag("spain.jpg") %></li>
+        <li><%= image_tag("cuba.png") %></li>
+        <li><%= image_tag("dubai.jpg") %></li>
+        <li><%= image_tag("shanghai.jpg") %></li>
+      </ul>
+    </div>
+    <!-- click to bring the slideshow in and out of fullscreen mode -->
+  <!--   <figure id="slideshow">
     <img src="http://flightconnection.net.pk/wp-content/uploads/2013/11/Dubai-City-Most-Popular-Attractions-Visit.jpg" alt>
       <img src="http://booktravel.com.ua/wp-content/uploads/2013/07/spain.jpg" alt>
       <img src="http://data.hdwallpapers.im/berlin_walking_in_the_city_night_germany_exotic_lighting_city.jpg" alt>
       <img src="http://rtsgp.com/wp-content/uploads/2014/11/background-Images4.jpg" alt>
       <img src="http://travelhdwallpapers.com/wp-content/uploads/2014/04/Bora-Bora-5.jpeg" alt>
     </figure>
-  </figure>
+  </figure> -->
 </body>
 </html>
