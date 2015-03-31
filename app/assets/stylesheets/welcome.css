@@ -20,12 +20,11 @@ top: 0;
 left: 0;
 }
 
-
-.slideShowContainer{
+.slideShow{
   list-style: none;
 }
 
-h1 {
+#welcome {
   text-align: center;
 }
 
