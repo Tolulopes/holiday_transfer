@@ -8,7 +8,6 @@
 
 #table {
   text-align: center;
-  background-color: red;
 }
 
 #package_index {
@@ -22,7 +21,8 @@
 
 table, th, td {
     border: 1px solid black;
-
+    background-color: rgba(94, 88, 88, 0.41);
+    opacity:1em;
 }
 
 table.center {
