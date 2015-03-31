@@ -16,9 +16,6 @@
 </head>
 <body>
 <%= yield :body || "<body>" %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <% if user_signed_in? %>
   <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
   <% end %>
@@ -26,6 +23,10 @@
   <%= yield %>
 </body>
 </html>
+
+<!-- <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> -->
+
 
 <!-- link needs to redirect to the packages index page -->
 <!-- need link to logout/ packages show page which lists all the packages. -->
