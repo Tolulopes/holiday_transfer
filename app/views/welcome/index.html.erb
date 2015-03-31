@@ -8,17 +8,17 @@
   <h1>Welcome Index </h1>
 
   <% content_for :body do %>
-  <body id = "welcome_index" >
+  <body id = "welcome_index">
     <% end %>
 
-    <h1 class="welcome"><div class="rotate">Travel To <span class="rwelcome">Spain</span> <span class="rwelcome">Dubai</span> <span class="rwelcome">BoraBora</span> <span class="rwelcome">Dubai</span> With Holiday Transfer</h1>
+  <h1 class="welcome"><div class="rotate">Travel To <span class="rwelcome">Spain</span> <span class="rwelcome">Dubai</span><span class="rwelcome">BoraBora</span><span class="rwelcome">Dubai</span> With Holiday Transfer</h1>
 
     <div class="transfer">
       <%= link_to 'TransferUrHoliday', new_user_session_path %>
     </div>
 
     <div class="slideShowContainer">
-      <ul class="slideshow">
+      <ul class="slideShow">
         <li><%= image_tag("spain.jpg") %></li>
         <li><%= image_tag("cuba.png") %></li>
         <li><%= image_tag("dubai.jpg") %></li>

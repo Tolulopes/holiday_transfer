@@ -32,7 +32,7 @@
 </div>
 <button>
 <%= link_to 'Buy Package', ticket_path %></button>
-
+<!-- // storing the marker info inside the html whenever the page is rendered, javascript is also calling the information from the html by data-json no need to set bounds because the map will zoom automatically when another marker is added. SO it sets the zoom based on the position of the first marker// -->
 <script>
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
