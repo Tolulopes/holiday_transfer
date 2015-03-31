@@ -36,3 +36,34 @@
 £<%= @ticket.price %>
 
 <button>Buy Ticket</button>
+
+
+<li><a href="#buyticket" data-toggle="modal">Buy Ticket</a></li>
+<div class="modal fade" id="buyticket" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal">
+        <div class="modal-header">
+          <h4>Please can you confirm that you want to purchase this ticket</h4>
+        </div>
+        <div class= "modal-body">
+        <p><%= @ticket.destination.name %></p>
+          <div class="modal fade">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-default" data-dismiss = "modal">Close</a>
+          <a class="btn btn-primary" id='sell_ticket' data-dismiss = "modal">Purchase</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').focus()
+        })
+      }
+    });
+  </script>

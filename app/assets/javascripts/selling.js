@@ -14,8 +14,8 @@ sellTicket = function(){
  attraction_name = $('#attraction_modal').val()
  attraction_description = $('#attraction_description').val()
  attraction_location = $('#location_modal').val()
-attraction_date = $('#date_modal').val()
-hotel_name = $('#hotel_modal').val()
+ attraction_date = $('#date_modal').val()
+ hotel_name = $('#hotel_modal').val()
  hotel_address = $('#address_modal').val()
  hotel_checkin = $('#checkin_modal').val()
  hotel_checkout = $('#checkout_modal').val()
@@ -65,8 +65,26 @@ hotel_name = $('#hotel_modal').val()
     data: data
   }).success(function(data){
     console.log(data);
+  $('#DIVIMAPPENDINGTO').append('<h1>Airline:' + data.ticket.airline.name + '</h1>');
+  $('#DIVIMAPPENDINGTO').append('<h1>Destination:' + data.destination.name + '</h1>');
+  $('#DIVIMAPPENDINGTO').append('<h1>Description:' + data.package.description + '</h1>');
+  $('#DIVIMAPPENDINGTO').append('<h1>Price:' + data.ticket.price + '</h1>');
+  $('#DIVIMAPPENDINGTO').append('<h1>Attraction:' + data.attraction.description + '</h1>');
+  $('#DIVIMAPPENDINGTO').append('<h1>Status:' + data.package.status + '</h1>');
+
   })
 }
+
+// .done(function(response){
+//               $.each(response, function(index, value){
+//                 console.log(value);
+//                 $('#result').append('<h2>' + 'Country: ' + value.name + '</h2>');
+//                   $('#result').append('<h3>' + 'Region: ' + value.region + '</h3>');
+//                    $('#result').append('<h4>' + 'Capital: ' + value.capital + '</h4>');
+//                     $('#result').append('<h5>' + 'Population: ' + value.population + '</h5');
+//                       $('#result').append('<h6>' + 'Language: ' + value.languages + '</h6>');
+//             })
+
 
 
 $(function(){
