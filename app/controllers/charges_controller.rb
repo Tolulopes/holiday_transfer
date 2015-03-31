@@ -4,18 +4,19 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @amount = 12000
+    @package = Package.find(params[:package_id])
+    @amount = @package.ticket*100
 
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => params[:stripeEmail],
       :card  => params[:stripeToken]
       )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => "Flight Ticket",
       :currency    => 'gbp'
       )
 

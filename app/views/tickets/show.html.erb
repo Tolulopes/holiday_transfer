@@ -37,6 +37,8 @@
 
 <button>Buy Ticket</button>
 
+<%= link_to 'Buy Package', new_charge %></button>
+
 
 <li><a href="#buyticket" data-toggle="modal">Buy Ticket</a></li>
 <div class="modal fade" id="buyticket" role="dialog">
@@ -49,7 +51,6 @@
         <div class= "modal-body">
         <p>Destination: <%= @ticket.destination.name %></p>
         <p>Price: £<%= @ticket.package.price %></p>
-
 
           <div class="modal fade">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
