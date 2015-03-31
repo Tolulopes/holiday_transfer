@@ -1,20 +1,41 @@
-$(document.ready(function){
+function cancelFullScreen() {
+    if (document.cancelFullScreen) {
+        document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+    } else if (document.msCancelFullScreen) {
+        document.msCancelFullScreen();
+    }
+    link = document.getElementById("container");
+    link.removeAttribute("onclick");
+    link.setAttribute("onclick", "fullScreen(this)");
+}
 
+function fullScreen(element) {
+    if (element.requestFullScreen) {
+        element.requestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    }
+    link = document.getElementById("container");
+    link.removeAttribute("onclick");
+    link.setAttribute("onclick", "cancelFullScreen()");
+}
 
-//initial fade-in time (in milliseconds)
-var initialFadeIn = 1000;
-//interval between items (in milliseconds)
-var itemInterval = 5000;
-
-//cross-fade time (in milliseconds)
-var fadeTime = 2500;
-
-//count number of items
-var numberOfItems = $('.rotating-item').length;
-
-//set current item
-var currentItem = 0;
-
-//show first item
-$('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
-});
+window.onload = function() {
+  imgs = document.getElementById('slideshow').children;
+  interval = 8000;
+  currentPic = 0;
+  imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+  imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+  var infiniteLoop = setInterval(function(){
+    imgs[currentPic].removeAttribute('style');
+    if ( currentPic == imgs.length - 1) { currentPic = 0; } else { currentPic++; }
+    imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+    imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+  }, interval);
+}

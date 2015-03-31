@@ -3,10 +3,11 @@
 }
 
 .welcome{
-  color: blue;
+  color: #B6DBE7;
+  opacity: 1em;
 }
 
-#wrapper {
+#welcome_wrapper {
 position: relative;
 width: 980px;
 height: 347px;
@@ -31,6 +32,50 @@ h1 {
 #welcome_index {
   background-image: url('dubai.jpg');
   background-size: cover;
-/*  background-size: 1000px 1000px;*/
       background-repeat: no-repeat;
+@keyframes fadey {
+0% { opacity: 0; }
+15% { opacity: 1; }
+85% { opacity: 1; }
+100% { opacity: 0; }
+}
+body {
+  font-family: Avenir, Arial, sans-serif;
+  margin: 0;
+  font-size: 0;
+}
+figure#slideshow {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+figure#slideshow img {
+  position: absolute;
+  left: 0; top: 0;
+  width: 980px; height: 600px;
+  opacity: 0;
+}
+figure#slideshow img:first-child { position: relative; }
+
+#container:fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+#container:-moz-full-screen figure, #container:-ms-full-screen figure, #container:-webkit-fullscreen figure, #container:fullscreen figure {
+  width: 347px;
+  margin: 0 auto;
+  background: #fff;
+}
+:-webkit-full-screen {
+  width: 2000px; height: 347px;
+}
+*:-moz-full-screen {
+  background: #fff;
+}
+*:-webkit-full-screen {
+  background: #fff;
 }
