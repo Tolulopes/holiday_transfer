@@ -27,3 +27,10 @@ h1 {
 .transfer {
   text-align: center;
 }
+
+#welcome_index {
+  background-image: url('dubai.jpg');
+  background-size: cover;
+/*  background-size: 1000px 1000px;*/
+      background-repeat: no-repeat;
+}
