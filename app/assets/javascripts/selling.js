@@ -1,4 +1,5 @@
-sellTicket = function(){
+sellTicket = function(e) {
+  e.preventDefault();
  destination_name = $('#destination_name').val()
  airline_name = $('#airline_modal').val()
  current_location = $('#current_modal').val()
@@ -58,20 +59,31 @@ sellTicket = function(){
      stars: hotel_star
    }
   }
+
   $.ajax({
     url: 'packages/sell_my_package',
     method: 'POST',
     dataType: 'json',
     data: data
-  }).success(function(data){
+  }).done(function(data){
     console.log(data);
-  $('#DIVIMAPPENDINGTO').append('<h1>Airline:' + data.ticket.airline.name + '</h1>');
-  $('#DIVIMAPPENDINGTO').append('<h1>Destination:' + data.destination.name + '</h1>');
-  $('#DIVIMAPPENDINGTO').append('<h1>Description:' + data.package.description + '</h1>');
-  $('#DIVIMAPPENDINGTO').append('<h1>Price:' + data.ticket.price + '</h1>');
-  $('#DIVIMAPPENDINGTO').append('<h1>Attraction:' + data.attraction.description + '</h1>');
-  $('#DIVIMAPPENDINGTO').append('<h1>Status:' + data.package.status + '</h1>');
+    var new_row = '<tr>'
+        + '<td>' + data.ticket.airline.name + '</td>'
+        + '<td>' + data.destination.name + '</td>'
+        + '<td>' + data.destination.name + '</td>'
+        + '<td>' + data.package.description + '</td>'
+        + '<td>' + data.ticket.price + '</td>'
+        + '<td>' + data.attraction.description + '</td>'
+        + '<td>' + data.package.status + '</td>'
+      '</tr>'
+    $('#package_listing').append(new_row);
 
+    // $('#DIVIMAPPENDINGTO').append('<h1>Destination:' + data.destination.name + '</h1>');
+    // $('#DIVIMAPPENDINGTO').append('<h1>Description:' + data.package.description + '</h1>');
+    // $('#DIVIMAPPENDINGTO').append('<h1>Price:' + data.ticket.price + '</h1>');
+    // $('#DIVIMAPPENDINGTO').append('<h1>Attraction:' + data.attraction.description + '</h1>');
+    // $('#DIVIMAPPENDINGTO').append('<h1>Status:' + data.package.status + '</h1>');
+    // $('.package-listing').append('</tr>');
   })
 }
 
