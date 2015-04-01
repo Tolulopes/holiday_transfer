@@ -6,16 +6,15 @@
   <div class="listing">
     <h1>Package Listing</h1>
 
-    <div class="package_listing">
-      <table class= "center">
-        <div class="package_table">
+    <div class="packages_tableContainer">
+      <table class= "package_table">
           <thead>
             <tr>
               <th>Airline</th>
               <th>Destination</th>
-              <th>Description</th>
-              <th>Price</th>
+        <!--       <th>Description</th> -->
               <th>Attraction</th>
+              <th>Price</th>
               <th>Status</th>
               <th colspan="3"></th>
             </tr>
@@ -26,13 +25,12 @@
           <tr>
             <td><%= package.ticket.airline %></td>
             <td><%= link_to package.ticket.destination.name, package %></td>
-            <td><%= package.description %></td>
+        <!--     <td><%= package.description %></td> -->
+            <td><%=  package.attractions.map{|attraction|attraction.name}.join('/')%></td>
             <td>£<%= package.ticket.price %></td>
-            <% package.attractions.each do |attraction| %>
-            <td><%= attraction.name %></td>
             <td><%= package.status %></td>
           </tr>
-          <% end %>
+       
           <% end %>
         </tbody>
       </table>
