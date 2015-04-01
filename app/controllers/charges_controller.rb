@@ -4,8 +4,6 @@ class ChargesController < ApplicationController
   end
 
   def create
-    binding.pry
-    puts 'debug'
     @ticket = Ticket.find(params[:ticket_id])
     @amount = @ticket.package.price*100
 

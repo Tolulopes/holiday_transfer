@@ -5,13 +5,14 @@
 */
 
 
-div#wrap map{
-	text-align: center;
-}
 
 #pack_show{
 	list-style: none;
 }
 .slideShow li{
 	display: none;
+}
+
+.map_1{
+	margin: 0 auto;
 }
