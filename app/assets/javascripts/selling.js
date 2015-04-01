@@ -76,6 +76,7 @@ sellTicket = function(e) {
   dataType: 'json',
   data: data
 }).done(function(data){
+  location.reload();
   console.log(data);
   console.log('hello dave');
   var new_row = '<tr>'

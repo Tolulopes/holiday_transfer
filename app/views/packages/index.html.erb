@@ -2,43 +2,44 @@
 <% content_for :body do %>
 <body id= "package_index" >
   <% end %>
-  <div class="listing">
+  <section class="header">
     <h1>Holiday Listings</h1>
+  </section>
+  <section class="table_list"
+  <div class="packages_tableContainer">
+    <table class= "package_table table center">
+      <thead>
+        <tr>
+          <th class="center">Airline</th>
+          <th class="center">Destination</th>
+          <th class="center">Attraction</th>
+          <th class="center">Price</th>
+          <th class="center">Status</th>
+        </tr>
+      </div>
+    </thead>
+    <tbody>
+      <% @packages.each do |package| %>
+      <tr>
+        <td><%= package.ticket.airline %></td>
+        <td><%= link_to package.ticket.destination.name, package %></td>
+        <td><%=  package.attractions.map{|attraction|attraction.name}.join('/')%></td>
+        <td>£<%= package.ticket.price %></td>
+        <td><%= package.status %></td>
+      </tr>
 
-    <div class="packages_tableContainer">
-      <table class= "package_table">
-          <thead>
-            <tr>
-              <th>Airline</th>
-              <th>Destination</th>
-        <!--       <th>Description</th> -->
-              <th>Attraction</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th colspan="3"></th>
-            </tr>
-          </div>
-        </thead>
-        <tbody>
-          <% @packages.each do |package| %>
-          <tr>
-            <td><%= package.ticket.airline %></td>
-            <td><%= link_to package.ticket.destination.name, package %></td>
-        <!--     <td><%= package.description %></td> -->
-            <td><%=  package.attractions.map{|attraction|attraction.name}.join('/')%></td>
-            <td>£<%= package.ticket.price %></td>
-            <td><%= package.status %></td>
-          </tr>
-       
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>
-<!-- modal goes here -->
+</div>
+</section>
 
-<li><a href="#sellticket" data-toggle="modal">Sell Ticket</a></li>
+<!-- modal goes here -->
+<section class="footer">
+<button>
+<a href="#sellticket" data-toggle="modal">Sell Ticket</a></button></section>
 <div class="modal fade" id="sellticket" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
