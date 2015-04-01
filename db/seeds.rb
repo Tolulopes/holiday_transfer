@@ -73,4 +73,6 @@ h3 = Hotel.create(name: 'Club Vila Bran' , address: 'str. Alunis, nr. 9, Bran, B
 
 h4 = Hotel.create(name: 'Peace Hotel', address: 'Pudong, Shanghai', checkin: '2015-08-01-13:00', checkout: '2015-08-20-12:00', stars: '4', package_id: p4.id)
 
+h5 = Hotel.create(name: 'Peace Hotel', address: 'Cuba', checkin: '2015-08-01-13:00', checkout: '2015-08-20-12:00', stars: '5', package_id: p5.id)
+
 puts 'seeded it'

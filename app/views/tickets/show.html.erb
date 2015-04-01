@@ -37,8 +37,22 @@
 
 <button>Buy Ticket</button>
 
-<%= link_to 'Buy Package', new_charge_path %></button>
+<%= form_tag ticket_charges_path(@ticket) do %>
+          <article>
+            <label class="amount">
+              <span>Destination: <%= @ticket.destination.name %></span>
+            </label>
+            <br>
+            <label class="amount">
+              <span>Amount: £<%= @ticket.package.price %></span>
+            </label>
+          </article>
 
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="hello"
+                  data-amount=<%= @ticket.package.price %>></script>
+        <% end %>
 
 <li><a href="#buyticket" data-toggle="modal">Buy Ticket</a></li>
 <div class="modal fade" id="buyticket" role="dialog">
@@ -49,8 +63,7 @@
           <h4>Please can you confirm that you want to purchase this ticket</h4>
         </div>
         <div class= "modal-body">
-        <p>Destination: <%= @ticket.destination.name %></p>
-        <p>Price: £<%= @ticket.package.price %></p>
+        <h1>TEXT HERE</h1>
 
           <div class="modal fade">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -59,7 +72,7 @@
         </div>
         <div class="modal-footer">
           <a class="btn btn-default" data-dismiss = "modal">Close</a>
-          <a class="btn btn-primary" id='sell_ticket' data-dismiss = "modal">Purchase</a>
+          
         </div>
       </form>
     </div>

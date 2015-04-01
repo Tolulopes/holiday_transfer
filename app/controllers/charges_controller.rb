@@ -4,8 +4,10 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @package = Package.find(params[:package_id])
-    @amount = @package.ticket*100
+    binding.pry
+    puts 'debug'
+    @ticket = Ticket.find(params[:ticket_id])
+    @amount = @ticket.package.price*100
 
 
     customer = Stripe::Customer.create(
@@ -19,6 +21,10 @@ class ChargesController < ApplicationController
       :description => "Flight Ticket",
       :currency    => 'gbp'
       )
+
+    @ticket.package.user_id = current_user.id
+    @ticket.package.status = "Sold"
+    @ticket.package.save
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

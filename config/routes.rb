@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get 'destination/show'
 
   resources :packages
-  resources :tickets
+  resources :tickets do
+    resources :charges
+  end
   resources :attractions
   resources :destinations
   resources :hotels
-  resources :charges
   devise_for :users
   get 'users/index'
   post 'packages/sell_my_package'=> 'packages#sell_my_package'

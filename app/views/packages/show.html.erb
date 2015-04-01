@@ -30,8 +30,10 @@
   <div id="map" data-json=<%=raw @hash.to_json %> style='width: 800px; height: 400px;'></div>
 </div>
 </div>
-<button>
-<%= link_to 'Buy Package', ticket_path %></button>
+
+<% if @package.status == "Available" %>
+  <button><%= link_to 'Buy Package', ticket_path %></button>
+<%end%>
 <!-- // storing the marker info inside the html whenever the page is rendered, javascript is also calling the information from the html by data-json no need to set bounds because the map will zoom automatically when another marker is added. SO it sets the zoom based on the position of the first marker// -->
 <script>
   handler = Gmaps.build('Google');
