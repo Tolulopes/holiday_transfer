@@ -1,4 +1,4 @@
-<h1>ticket show / Ticket Information </h1>
+<h1> Ticket Information </h1>
 
 <strong>Flying From:</strong>
 <%= @ticket.current_location %><br>
@@ -30,44 +30,32 @@
 <%= @ticket.round_trip %><br>
 
 <strong>Hotel:</strong>
-<%= @ticket.package.hotel.name %>
+<%= @ticket.package.hotel.name %><br>
 
-<strong>Price:</strong>
-£<%= @ticket.price %>
-
-<button>Buy Ticket</button>
 
 <%= form_tag ticket_charges_path(@ticket) do %>
-          <article>
-            <label class="amount">
-              <span>Destination: <%= @ticket.destination.name %></span>
-            </label>
-            <br>
-            <label class="amount">
-              <span>Amount: £<%= @ticket.package.price %></span>
-            </label>
-          </article>
 
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="bla bla"
 
-                  data-amount=<%= @ticket.package.price*100 %>
-                  data-currency='gbp'>
-                  </script>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+data-description="Credit Card Information"
 
-        <% end %>
+data-amount=<%= @ticket.package.price*100+1500 %>
+data-currency='gbp'>
+</script>
 
-<li><a href="#buyticket" data-toggle="modal">Buy Ticket</a></li>
+<% end %>
+
+<a href="#buyticket" data-toggle="modal">Terms And Conditions</a>
 <div class="modal fade" id="buyticket" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <form class="form-horizontal">
         <div class="modal-header">
-          <h4>Please can you confirm that you want to purchase this ticket</h4>
+          <h4>Terms And Conditions Please Read Carefully</h4>
         </div>
         <div class= "modal-body">
-        <h1>TEXT HERE</h1>
+          <h2>There Will Be An Additional £15.00 Administration Fee Charge For The Name Change On Your Boarding Pass. </h2>
 
           <div class="modal fade">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -86,4 +74,4 @@
           $('#myInput').focus()
         })
       });
-  </script>
+    </script>
