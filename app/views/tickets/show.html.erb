@@ -50,8 +50,12 @@
 
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="hello"
-                  data-amount=<%= @ticket.package.price %>></script>
+                  data-description=""
+
+                  data-amount=<%= @ticket.package.price*100 %>
+                  data-currency='gbp'
+                  </script>
+
         <% end %>
 
 <li><a href="#buyticket" data-toggle="modal">Buy Ticket</a></li>
