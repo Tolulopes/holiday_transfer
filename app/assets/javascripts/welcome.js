@@ -23,7 +23,7 @@ $(function(){
   }());
 
   function slideShow(){
-    slides.eq(slideCount).fadeIn(1000).delay(2000).fadeOut(1000, function(){
+    slides.eq(slideCount).fadeIn(1000).delay(1000).fadeOut(1000, function(){
       slideCount < totalSlides - 1 ? slideCount ++ :slideCount = 0;
       slideShow();
     });

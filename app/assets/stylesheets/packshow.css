@@ -4,6 +4,11 @@
 }
 */
 
-#map_1{
-  position: center;
+
+div#wrap map{
+	text-align: center;
+}
+
+#pack_show{
+	list-style: none;
 }

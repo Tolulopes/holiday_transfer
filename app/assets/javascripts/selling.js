@@ -89,27 +89,10 @@ sellTicket = function(e) {
   console.log(new_row)
   $('.package_listing').append(new_row);
 
-    // $('#DIVIMAPPENDINGTO').append('<h1>Destination:' + data.destination.name + '</h1>');
-    // $('#DIVIMAPPENDINGTO').append('<h1>Description:' + data.package.description + '</h1>');
-    // $('#DIVIMAPPENDINGTO').append('<h1>Price:' + data.ticket.price + '</h1>');
-    // $('#DIVIMAPPENDINGTO').append('<h1>Attraction:' + data.attraction.description + '</h1>');
-    // $('#DIVIMAPPENDINGTO').append('<h1>Status:' + data.package.status + '</h1>');
-    // $('.package-listing').append('</tr>');
   })
 }
 
-// .done(function(response){
-//               $.each(response, function(index, value){
-//                 console.log(value);
-//                 $('#result').append('<h2>' + 'Country: ' + value.name + '</h2>');
-//                   $('#result').append('<h3>' + 'Region: ' + value.region + '</h3>');
-//                    $('#result').append('<h4>' + 'Capital: ' + value.capital + '</h4>');
-//                     $('#result').append('<h5>' + 'Population: ' + value.population + '</h5');
-//                       $('#result').append('<h6>' + 'Language: ' + value.languages + '</h6>');
-//             })
 
-
-
-$(function(){
-  $('#sell_ticket').on('click', sellTicket)
+  $(function(){
+    $('#sell_ticket').on('click', sellTicket)
 });

@@ -1,5 +1,5 @@
-<%= link_to 'Back', packages_path %></button>
-<h1>Packages#show</h1>
+
+<h1>Package Details</h1>
 
 <% content_for :body do %>
 <body id ="pack_show">
@@ -8,22 +8,28 @@
 <strong>Ticker Owner</strong>
   <%= @package.user.first_name %><br>
 
-<strong>Package:</strong>
-  <%= @package.description %><br>
-
-<strong>Price:</strong>
-  <%= @package.price %><br>
-
-
+<strong>Hotel:</strong>
+  <%= @package.hotel.name %><br>
 
 <strong>Attraction:</strong>
+<div class="pac_show"
 <ul>
   <% @package.attractions.each do |attraction| %>
     <li><%= attraction.name %>:  <%= attraction.description %></li>
   <% end %>
   </ul>
-<strong>Map:</strong>
-<p>Map with points of interest will go here </p>
+</div>
+
+<strong>Map:</strong><br>
+<p>Below you will find the location of the pre-booked attractions that are part of your package</p>
+
+
+<% if @package.status == "Available" %>
+
+  <button><%= link_to 'Buy Ticket', ticket_path %></button>
+  
+<%end%><br>
+
 
 <div class="map_1"
 <div style='width: 800px;'>
@@ -31,9 +37,7 @@
 </div>
 </div>
 
-<% if @package.status == "Available" %>
-  <button><%= link_to 'Buy Package', ticket_path %></button>
-<%end%>
+
 <!-- // storing the marker info inside the html whenever the page is rendered, javascript is also calling the information from the html by data-json no need to set bounds because the map will zoom automatically when another marker is added. SO it sets the zoom based on the position of the first marker// -->
 <script>
   handler = Gmaps.build('Google');
@@ -45,3 +49,4 @@
     handler.fitMapToBounds();
   });
 </script>
+<%= link_to 'Back', packages_path %>
