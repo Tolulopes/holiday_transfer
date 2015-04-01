@@ -16,7 +16,7 @@
   line-height: 1.42857143;
    color: #333;
   background-image: url('lounge.jpg');
-  background-size: fit;
+  background-size: 95%;
 }
 
 table, th, td {
@@ -33,9 +33,7 @@ table.center {
    margin-right:auto;
  }
 
-/* #package_listing{
-  background-color: red*/
- }
+
 
  table {
    background-color: rgb(94, 27, 27);
