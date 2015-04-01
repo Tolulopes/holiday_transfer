@@ -12,3 +12,6 @@ div#wrap map{
 #pack_show{
 	list-style: none;
 }
+.slideShow li{
+	display: none;
+}
