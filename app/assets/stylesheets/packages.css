@@ -15,8 +15,8 @@
   font-size: 14px;
   line-height: 1.42857143;
    color: #333;
- /* background-image: url('lounge.jpg');
-  background-image: no-repeat;*/
+  background-image: url('lounge.jpg');
+  background-size: fit;
 }
 
 table, th, td {

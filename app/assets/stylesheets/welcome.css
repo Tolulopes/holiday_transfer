@@ -3,7 +3,7 @@
 }
 
 .welcome{
-  color: #B6DBE7;
+  color: #98CBDD;
   opacity: 1em;
 }
 
@@ -35,4 +35,18 @@ left: 0;
 
 .wordtate{
 	text-align: center;
+	font-size: 20px;
+	border: solid #98CBDD;
+	padding: 10px;
+	opacity: 0.4em;
+	
+	
 }
+
+.slideShowContainer {
+	margin: 30.5px;
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+
+
