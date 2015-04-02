@@ -34,6 +34,9 @@
 <strong>Hotel:</strong>
 <%= @ticket.package.hotel.name %><br>
 
+<strong>Price:</strong>
+£<%= @ticket.package.price %><br>
+
 
 <%= form_tag ticket_charges_path(@ticket) do %>
 
