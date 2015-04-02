@@ -5,7 +5,7 @@
   font-size: 14px;
   line-height: 1.42857143;
    color: #333;
-  background-image: url('http://www.10-walls.com/data_images/out/57/5106019-otpusk-na-plyazhah-v-goa.jpg');
+  background-image: url('lounge.jpg');
   background-size: 100%;
 }
 
@@ -46,7 +46,7 @@ button{
   height:300px;
   padding: 30px;
   background-color: white ;
-  opacity: 0.5;
+  opacity: 0.7;
   color:black;
   font-weight: bold;
 
