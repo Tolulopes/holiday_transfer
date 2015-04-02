@@ -1,6 +1,9 @@
 
 #pack_show{
 	list-style: none;
+	background-image: url('http://www.businesscomputingworld.co.uk/wp-content/uploads/2012/12/New-Holiday-Rules.jpg');
+	background-size: cover;
+	text-align: center;
 }
 .slideShow li{
 	display: none;
