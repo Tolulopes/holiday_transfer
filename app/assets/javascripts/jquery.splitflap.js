@@ -371,10 +371,10 @@
 
 		var settings = $.extend({
 			image:          'images/chars.png',
-			imageSize:      '',
+			imageSize:      '1250px 50px',
 			charsMap:       'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=',
-			charWidth:      50,
-			charHeight:     100,
+			charWidth:      25,
+			charHeight:     50,
 			charSubstitute: ' ',
 			padDir:         'left',
 			padChar:        ' ',

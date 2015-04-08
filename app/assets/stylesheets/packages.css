@@ -41,16 +41,15 @@ button{
  section.footer{
   text-align: center;
  }
-
+/*
  section.table_list{
   height:300px;
-  padding: 30px;
   background-color: white ;
   opacity: 0.7;
   color:black;
   font-weight: bold;
 
- }
+ }*/
 
  .h1, h1{
   text-align: center;
