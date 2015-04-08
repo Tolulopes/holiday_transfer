@@ -13,7 +13,7 @@
         <tr>
           <th class="center">Airline</th>
           <th class="center">Destination</th>
-         <!--  <th class="center">Attraction</th> -->
+         
           <th class="center">Price</th>
           <th class="center">Status</th>
         </tr>
@@ -23,8 +23,8 @@
       <% @packages.each do |package| %>
       <tr>
         <td class="demo"><%= package.ticket.airline %></td>
-        <td class=""><%= link_to package.ticket.destination.name %></td>
-        <!-- <td class="demo"><%= package.attractions.map{|attraction|attraction.name}.join('/')%></td> -->
+        <td class=""><%= link_to package.ticket.destination.name, package %></td>
+        
         <td class="demo"><%= package.ticket.price %></td>
         <td class="demo"><%= package.status %></td>
       </tr>
