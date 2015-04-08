@@ -22,7 +22,7 @@ $(function(){
   }());
 
   function slideShow(){
-    slides.eq(slideCount).fadeIn(1000).delay(1000).fadeOut(1000, function(){
+    slides.eq(slideCount).fadeIn(1000).delay(7000).fadeOut(1000, function(){
       slideCount < totalSlides - 1 ? slideCount ++ :slideCount = 0;
       slideShow();
     });
@@ -38,6 +38,6 @@ $(function(){
 
 //pre-load immediately envoked on page load and jquery fires up 
 //slidecount checks if variable is less than the number of slides on the list item 
-//if so we are instansitating a new javascrript object and assigning it to the slide cache array variable
+//if so we are instansitating a new javascript object and assigning it to the slide cache array variable
 //where the array index value is equal to the slide count variable
 //once this happens we set the source attribute to the image file as fetched from the image tag within the list item.

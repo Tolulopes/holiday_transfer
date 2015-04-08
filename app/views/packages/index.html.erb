@@ -22,11 +22,11 @@
     <tbody>
       <% @packages.each do |package| %>
       <tr>
-        <td><%= package.ticket.airline %></td>
-        <td><%= link_to package.ticket.destination.name, package %></td>
-        <td><%=  package.attractions.map{|attraction|attraction.name}.join('/')%></td>
-        <td>£<%= package.ticket.price %></td>
-        <td><%= package.status %></td>
+        <td class="demo"><%= package.ticket.airline %></td>
+        <td class=""><%= link_to package.ticket.destination.name, package %></td>
+        <td class="demo"><%= package.attractions.map{|attraction|attraction.name}.join('/')%></td>
+        <td class="demo">£<%= package.ticket.price %></td>
+        <td class="demo"><%= package.status %></td>
       </tr>
 
       <% end %>
@@ -340,5 +340,18 @@
               $(".attraction_fields").hide();
             }
           });
+});
+</script>
+<%= javascript_include_tag "jquery.splitflap.js" %>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.demo').splitFlap();
+  $('td a').splitFlap({
+
+    speed:          30,
+    speedVariation: 7,
+
+
+  });
 });
 </script>
