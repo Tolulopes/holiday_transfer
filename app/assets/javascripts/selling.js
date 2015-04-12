@@ -82,9 +82,9 @@ sellTicket = function(e) {
   var new_row = '<tr>'
                   + '<td>' + data.ticket.airline.name + '</td>'
                   + '<td><a href="/packages/'+ data.destination.id + '"' + data.destination.name + '</td>'
-                  + '<td>' + data.package.description + '</td>'
+                  // + '<td>' + data.package.description + '</td>'
                   + '<td>' + data.ticket.price + '</td>'
-                  + '<td>' + data.attraction_1.description + '</td>'
+                  // + '<td>' + data.attraction_1.description + '</td>'
                   + '<td>' + data.package.status + '</td>'
                 '</tr>'
   console.log(new_row)

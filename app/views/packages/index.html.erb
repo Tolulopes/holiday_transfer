@@ -1,353 +1,353 @@
 
 <% content_for :body do %>
-<body id= "package_index" >
+<body id= "package_index">
   <% end %>
   
   <section class="header">
     <h1>Holiday Listings</h1>
   </section>
-  <section class="table_list"
-  <div class="packages_tableContainer">
-    <table class= "package_table table center">
-      <thead>
+  <section class="table_list">
+    <div class="packages_tableContainer">
+      <table class= "package_table table center">
+        <thead>
+          <tr>
+            <th class="center">Airline</th>
+            <th class="center">Destination</th>
+
+            <th class="center">Price</th>
+            <th class="center">Status</th>
+          </tr>
+        </div>
+      </thead>
+      <tbody>
+        <% @packages.each do |package| %>
         <tr>
-          <th class="center">Airline</th>
-          <th class="center">Destination</th>
-         
-          <th class="center">Price</th>
-          <th class="center">Status</th>
+          <td class="demo"><%= package.ticket.airline %></td>
+          <td class=""><%= link_to package.ticket.destination.name, package %></td>
+          <td class="demo"><%= package.ticket.price %></td>
+          <td class="demo"><%= package.status %></td>
         </tr>
-      </div>
-    </thead>
-    <tbody>
-      <% @packages.each do |package| %>
-      <tr>
-        <td class="demo"><%= package.ticket.airline %></td>
-        <td class=""><%= link_to package.ticket.destination.name, package %></td>
-        
-        <td class="demo"><%= package.ticket.price %></td>
-        <td class="demo"><%= package.status %></td>
-      </tr>
-
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 </section>
 
-</script>
-<%= javascript_include_tag "jquery.splitflap.js" %>
-<script type="text/javascript">
-$(document).ready(function() {
-  $('.demo').splitFlap();
-  $('td a').splitFlap({
-  });
-});
-</script>
 
-<!-- modal goes here -->
+
+<!-- modal goes here -->  
 <section class="footer">
-<button>
-<a href="#sellticket" data-toggle="modal">Sell Ticket</a></button></section>
-<div class="modal fade" id="sellticket" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form class="form-horizontal">
-        <div class="modal-header">
-          <h4>Please Enter The Full Holiday Details </h4>
-        </div>
-        <div class= "modal-body">
+  <button>
+    <a href="#sellticket" data-toggle="modal">Sell Ticket</a></button></section>
+    <div class="modal fade" id="sellticket" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="form-horizontal">
+            <div class="modal-header">
+              <h4>Please Enter The Full Holiday Details </h4>
+            </div>
+            <div class= "modal-body">
 
-          <div class="form-group">
-            <select id="select_type" name="options">
+              <div class="form-group">
+                <select id="select_type" name="options">
 
-              <option value="select">select</option>
-              <option value="Destination">Destination</option>
-              <option value="Package">Package</option>
-              <option value="Hotel">Hotel</option>
-              <option value="Attractions">Attractions</option>
-              <option value="Ticket">Ticket</option>
-            </select>
+                  <option value="select">select</option>
+                  <option value="Destination">Destination</option>
+                  <option value="Package">Package</option>
+                  <option value="Hotel">Hotel</option>
+                  <option value="Attractions">Attractions</option>
+                  <option value="Ticket">Ticket</option>
+                </select>
+              </div>
+
+
+              <div id="destination_fields">
+                <h1>Destination:</h1>
+                <div class="form-group">
+                  <label class="destination_name" class="col-lg-2 control-label">Name:</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="form-control" id="destination_name" placeholder="Name">
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="ticket_fields">
+                <h1>Ticket:</h1>
+                <div class="form-group">
+                  <label class="airline_modal" class ="col-lg-2 control-label">Airline:</label>
+                  <div class="col-lg-5">
+
+                    <input type="text" class="form-control" id="airline_modal" placeholder="Airline">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "current_modal" class = "col-lg-2 control-label">Current Location:</label>
+                  <div class="col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "current_modal" placeholder = "Current Location">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class= "ticket_destination" class = "col-lg-2 control-label">Destination:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "ticket_destination" placeholder = "Destination">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class= "class_modal" class = "col-lg-2 control-label">Class:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "class_modal" placeholder = "Class">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "reference_modal" class = "col-lg-2 control-label">Booking Reference:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "reference_modal" placeholder = "e.g va321">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "allowance_modal" class = "col-lg-2 control-label">Baggage Allowance:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "integer" class= "form-control" id= "allowance_modal" placeholder = "e.g 23">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "departure_modal" class = "col-lg-2 control-label">Departure Time:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "departure_modal" placeholder = "departure time">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "arrival_modal" class = "col-lg-2 control-label">Arrival Time:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "arrival_modal" placeholder = "Arrival Time">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "return_modal" class = "col-lg-2 control-label">Round Trip:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "return_modal" placeholder = "return/ one way">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "ticket_price" class = "col-lg-2 control-label">Price:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "float" class= "form-control" id= "ticket_price" placeholder = "Price">
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="attraction_fields_1" class="attraction_fields">
+                <h1>Attractions:</h1>
+                <div class="form-group">
+                  <label class= "attraction_modal_1" class = "col-lg-2 control-label">Attraction:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "attraction_modal_1" placeholder = "Any Pre-booked activities">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "attraction_description_1" class = "col-lg-2 control-label">Description:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "attraction_description_1" placeholder = "Attraction Description">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class= "location_modal_1" class = "col-lg-2 control-label">Location:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "location_modal_1" placeholder = "Attraction Location">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "date_modal_1" class = "col-lg-2 control-label">Date:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "date_modal_1" placeholder = "date">
+                  </div>
+                </div>
+              </div>
+
+              <div id="attraction_fields_2" class="attraction_fields">
+                <h1>Attractions:</h1>
+                <div class="form-group">
+                  <label class= "attraction_modal_2" class = "col-lg-2 control-label">Attraction:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "attraction_modal_2" placeholder = "Any Pre-booked activities">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "attraction_description_2" class = "col-lg-2 control-label">Description:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "attraction_description_2" placeholder = "Attraction Description">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class= "location_modal_2" class = "col-lg-2 control-label">Location:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "location_modal_2" placeholder = "Attraction Location">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "date_modal_2" class = "col-lg-2 control-label">Date:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "date_modal_2" placeholder = "date">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div id="hotel_fields">
+                <h1>Hotel:</h1>
+                <div class="form-group">
+                  <label class= "hotel_modal" class = "col-lg-2 control-label">Hotel:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "hotel_modal" placeholder = "Hotel Name">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "address_modal" class = "col-lg-2 control-label">Address:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "address_modal" placeholder = "Hotel Address">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "checkin_modal" class = "col-lg-2 control-label">Check In:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "checkin_modal" placeholder = "Checkin Time">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "checkout_modal" class = "col-lg-2 control-label">Check Out:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "datetime-local" class= "form-control" id= "checkout_modal" placeholder = "Checkout Time">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "star_modal" class = "col-lg-2 control-label">Stars:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "integer" class= "form-control" id= "star_modal" placeholder = "Hotel Stars">
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="package_fields">
+                <h1>Package:</h1>
+                <div class="form-group">
+                  <label class= "description_modal" class = "col-lg-2 control-label">Description:</label>
+                  <div class = "col-lg-5">
+
+                    <input type = "text" class= "form-control" id= "description_modal" placeholder ="Description">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class= "price_modal" class = "col-lg-2 control-label">Price:</label>
+                  <div class = "col-lg-5">
+                    <input type = "text" class= "form-control" id= "price_modal" placeholder="Price">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss = "modal">Close</a>
+                <a class="btn btn-primary" id='sell_ticket' data-dismiss = "modal">Sell</a>
+              </div>
+            </form>
           </div>
 
-
-          <div id="destination_fields">
-            <h1>Destination:</h1>
-            <div class="form-group">
-              <label class="destination_name" class = "col-lg-2 control-label">Name:</label>
-              <div class="col-lg-5">
-
-                <input type="text" class= "form-control" id= "destination_name" placeholder = "Name">
-              </div>
-            </div>
-          </div>
-
-
-          <div id="ticket_fields">
-            <h1>Ticket:</h1>
-            <div class="form-group">
-              <label class= "airline_modal" class = "col-lg-2 control-label">Airline:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "airline_modal" placeholder = "Airline">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "current_modal" class = "col-lg-2 control-label">Current Location:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "current_modal" placeholder = "Current Location">
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label class= "ticket_destination" class = "col-lg-2 control-label">Destination:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "ticket_destination" placeholder = "Destination">
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label class= "class_modal" class = "col-lg-2 control-label">Class:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "class_modal" placeholder = "Class">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "reference_modal" class = "col-lg-2 control-label">Booking Reference:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "reference_modal" placeholder = "e.g va321">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "allowance_modal" class = "col-lg-2 control-label">Baggage Allowance:</label>
-              <div class = "col-lg-5">
-
-                <input type = "integer" class= "form-control" id= "allowance_modal" placeholder = "e.g 23">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "departure_modal" class = "col-lg-2 control-label">Departure Time:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "departure_modal" placeholder = "departure time">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "arrival_modal" class = "col-lg-2 control-label">Arrival Time:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "arrival_modal" placeholder = "Arrival Time">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "return_modal" class = "col-lg-2 control-label">Round Trip:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "return_modal" placeholder = "return/ one way">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "ticket_price" class = "col-lg-2 control-label">Price:</label>
-              <div class = "col-lg-5">
-
-                <input type = "float" class= "form-control" id= "ticket_price" placeholder = "Price">
-              </div>
-            </div>
-          </div>
-
-
-          <div id="attraction_fields_1" class="attraction_fields">
-            <h1>Attractions:</h1>
-            <div class="form-group">
-              <label class= "attraction_modal_1" class = "col-lg-2 control-label">Attraction:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "attraction_modal_1" placeholder = "Any Pre-booked activities">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "attraction_description_1" class = "col-lg-2 control-label">Description:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "attraction_description_1" placeholder = "Attraction Description">
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label class= "location_modal_1" class = "col-lg-2 control-label">Location:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "location_modal_1" placeholder = "Attraction Location">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "date_modal_1" class = "col-lg-2 control-label">Date:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "date_modal_1" placeholder = "date">
-              </div>
-            </div>
-          </div>
-
-          <div id="attraction_fields_2" class="attraction_fields">
-            <h1>Attractions:</h1>
-            <div class="form-group">
-              <label class= "attraction_modal_2" class = "col-lg-2 control-label">Attraction:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "attraction_modal_2" placeholder = "Any Pre-booked activities">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "attraction_description_2" class = "col-lg-2 control-label">Description:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "attraction_description_2" placeholder = "Attraction Description">
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label class= "location_modal_2" class = "col-lg-2 control-label">Location:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "location_modal_2" placeholder = "Attraction Location">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "date_modal_2" class = "col-lg-2 control-label">Date:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "date_modal_2" placeholder = "date">
-              </div>
-            </div>
-          </div>
-
-
-
-          <div id="hotel_fields">
-            <h1>Hotel:</h1>
-            <div class="form-group">
-              <label class= "hotel_modal" class = "col-lg-2 control-label">Hotel:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "hotel_modal" placeholder = "Hotel Name">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "address_modal" class = "col-lg-2 control-label">Address:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "address_modal" placeholder = "Hotel Address">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "checkin_modal" class = "col-lg-2 control-label">Check In:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "checkin_modal" placeholder = "Checkin Time">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "checkout_modal" class = "col-lg-2 control-label">Check Out:</label>
-              <div class = "col-lg-5">
-
-                <input type = "datetime-local" class= "form-control" id= "checkout_modal" placeholder = "Checkout Time">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "star_modal" class = "col-lg-2 control-label">Stars:</label>
-              <div class = "col-lg-5">
-
-                <input type = "integer" class= "form-control" id= "star_modal" placeholder = "Hotel Stars">
-              </div>
-            </div>
-          </div>
-
-
-          <div id="package_fields">
-            <h1>Package:</h1>
-            <div class="form-group">
-              <label class= "description_modal" class = "col-lg-2 control-label">Description:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "description_modal" placeholder = "Description">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class= "price_modal" class = "col-lg-2 control-label">Price:</label>
-              <div class = "col-lg-5">
-
-                <input type = "text" class= "form-control" id= "price_modal" placeholder = "Price">
-              </div>
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <a class="btn btn-default" data-dismiss = "modal">Close</a>
-            <a class="btn btn-primary" id='sell_ticket' data-dismiss = "modal">Sell</a>
-          </div>
-        </form>
-      </div>
-
-      <script>
-        $(document).ready(function (){
-          $("#select_type").change(function() {
-            if ($(this).val() == "Destination") {
-              $("#destination_fields").show();
-              $("#package_fields").hide();
-              $("#hotel_fields").hide();
-              $("#ticket_fields").hide();
-              $(".attraction_fields").hide();
-            }else if($(this).val() == "Package"){
-              $("#destination_fields").hide();
-              $("#package_fields").show();
-              $("#hotel_fields").hide();
-              $("#ticket_fields").hide();
-              $(".attraction_fields").hide();
-            }else if($(this).val() == "Hotel"){
-              $("#destination_fields").hide();
-              $("#package_fields").hide();
-              $("#hotel_fields").show();
-              $("#ticket_fields").hide();
-              $(".attraction_fields").hide();
-            }else if($(this).val() == "Attractions"){
-              $("#destination_fields").hide();
-              $("#package_fields").hide();
-              $("#hotel_fields").hide();
-              $("#ticket_fields").hide();
-              $(".attraction_fields").show();
-            }else if($(this).val() == "Ticket"){
-              $("#destination_fields").hide();
-              $("#package_fields").hide();
-              $("#hotel_fields").hide();
-              $("#ticket_fields").show();
-              $(".attraction_fields").hide();
-            }
-          });
+          <script type="text/javascript">
+            $(document).ready(function (){
+              $("#select_type").change(function() {
+                if ($(this).val() == "Destination") {
+                  $("#destination_fields").show();
+                  $("#package_fields").hide();
+                  $("#hotel_fields").hide();
+                  $("#ticket_fields").hide();
+                  $(".attraction_fields").hide();
+                }else if($(this).val() == "Package"){
+                  $("#destination_fields").hide();
+                  $("#package_fields").show();
+                  $("#hotel_fields").hide();
+                  $("#ticket_fields").hide();
+                  $(".attraction_fields").hide();
+                }else if($(this).val() == "Hotel"){
+                  $("#destination_fields").hide();
+                  $("#package_fields").hide();
+                  $("#hotel_fields").show();
+                  $("#ticket_fields").hide();
+                  $(".attraction_fields").hide();
+                }else if($(this).val() == "Attractions"){
+                  $("#destination_fields").hide();
+                  $("#package_fields").hide();
+                  $("#hotel_fields").hide();
+                  $("#ticket_fields").hide();
+                  $(".attraction_fields").show();
+                }else if($(this).val() == "Ticket"){
+                  $("#destination_fields").hide();
+                  $("#package_fields").hide();
+                  $("#hotel_fields").hide();
+                  $("#ticket_fields").show();
+                  $(".attraction_fields").hide();
+                }
+              });
 });
+</script>
+
+<%= javascript_include_tag "jquery.splitflap.js"%>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $('.demo').splitFlap();
+    $('td a').splitFlap({
+
+    });
+  });
+</script>
