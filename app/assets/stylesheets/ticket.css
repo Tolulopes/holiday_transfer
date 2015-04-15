@@ -1,0 +1,22 @@
+/*.wrapper{
+	background-image: url('http://seoash.com/wp-content/uploads/2015/01/holiday.jpg');
+}*/
+
+
+.info{
+	text-align: center;
+	background-image: url('http://seoash.com/wp-content/uploads/2015/01/holiday.jpg');
+}
+
+.details{
+	text-align: center;
+}
+
+p{
+	text-align: center;
+}
+
+#ticket_info{
+	background-color: pink;
+
+}

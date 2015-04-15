@@ -1,84 +1,93 @@
+<% content_for :body do %>
+<body id = "ticket_info">
+  <% end %>
+
 <%= link_to 'Holiday Listing', packages_path %>
-<div class"wrapper">
-<h1> Ticket Information </h1>
-<div class="info">
-<strong>Flying From:</strong>
-<%= @ticket.current_location %><br>
 
-<strong>Flying To:</strong>
-<%= @ticket.destination.name %><br>
+  <h1> Ticket Information </h1><br>
+  
+<div class="details">
+    <strong>Flying From:</strong>
+    <%= @ticket.current_location %><br>
 
-<strong>Class:</strong>
-<%= @ticket.ticket_class %><br>
+    <strong>Flying To:</strong>
+    <%= @ticket.destination.name %><br>
 
-<strong>Flying With:</strong>
-<%= @ticket.airline %><br>
+    <strong>Class:</strong>
+    <%= @ticket.ticket_class %><br>
 
-<strong>Booking Reference:</strong>
-<%= @ticket.booking_reference %><br>
+    <strong>Flying With:</strong>
+    <%= @ticket.airline %><br>
 
-<strong>Baggage Allowance:</strong>
-<%= @ticket.baggage_allowance %>kg<br>
+    <strong>Booking Reference:</strong>
+    <%= @ticket.booking_reference %><br>
 
-<strong>Departure Time:</strong>
+    <strong>Baggage Allowance:</strong>
+    <%= @ticket.baggage_allowance %>kg<br>
 
-<%= @ticket.departure_time %><br>
+    <strong>Departure Time:</strong>
 
-<strong>Arrival Time:</strong>
+    <%= @ticket.departure_time %><br>
 
-<%= @ticket.arrival_time %><br>
+    <strong>Arrival Time:</strong>
 
-<strong>Round Trip:</strong>
-<%= @ticket.round_trip %><br>
+    <%= @ticket.arrival_time %><br>
 
-<strong>Hotel:</strong>
-<%= @ticket.package.hotel.name %><br>
+    <strong>Round Trip:</strong>
+    <%= @ticket.round_trip %><br>
 
-<strong>Price:</strong>
-£<%= @ticket.package.price %><br>
+    <strong>Hotel:</strong>
+    <%= @ticket.package.hotel.name %><br>
+
+    <strong>Price:</strong>
+    £<%= @ticket.package.price %><br>
+
+  
+ 
+    <%= form_tag ticket_charges_path(@ticket) do %>
 
 
-<%= form_tag ticket_charges_path(@ticket) do %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Credit Card Information"
+
+    data-amount=<%= @ticket.package.price*100+1500 %>
+    data-currency='gbp'>
+  </script>
+
+  <% end %>
 
 
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-data-description="Credit Card Information"
-
-data-amount=<%= @ticket.package.price*100+1500 %>
-data-currency='gbp'>
-</script>
-
-<% end %>
-
-<a href="#buyticket" data-toggle="modal">Terms And Conditions</a>
-<div class="modal fade" id="buyticket" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form class="form-horizontal">
-        <div class="modal-header">
-          <h4>Terms And Conditions Please Read Carefully</h4>
-        </div>
-        <div class= "modal-body">
-          <h2>There Will Be An Additional £15.00 Administration Fee Charge For The Name Change On Your Boarding Pass. </h2>
-
-          <div class="modal fade">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
+  <div class="tc">
+  <a href="#buyticket" data-toggle="modal">Terms And Conditions</a>
+  <div class="modal fade" id="buyticket" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal">
+          <div class="modal-header">
+            <h4>Terms And Conditions Please Read Carefully</h4>
           </div>
-        </div>
-        <div class="modal-footer">
-          <a class="btn btn-default" data-dismiss = "modal">Close</a>
-          
-        </div>
-      </form>
-    </div>
-    <script>
-      $(document).ready(function(){
-        $('#myModal').on('shown.bs.modal', function () {
-          $('#myInput').focus()
-        })
-      });
-    </script>
-</div>
-</div>
+          <div class= "modal-body">
+            <h2>There Will Be An Additional £15.00 Administration Fee Charge For The Name Change On Your Boarding Pass. </h2>
+
+            <div class="modal fade">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-default" data-dismiss = "modal">Close</a>
+
+          </div>
+        </form>
+      </div>
+      <script>
+        $(document).ready(function(){
+          $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+          })
+        });
+      </script>
+      </div>
+  </div>
+  </div>
