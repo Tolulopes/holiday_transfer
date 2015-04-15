@@ -43,6 +43,11 @@ button{
  section.footer{
   text-align: center;
  }
+
+ .modal_form{
+  color: #71DAA2;
+  text-align: left;
+ }
 /*
  section.table_list{
   height:300px;
