@@ -1,8 +1,8 @@
-<h2>Thanks for your payment for <strong>£<%= @ticket.package.price+15 %></strong> has been successful!
+<h2>Thanks <%= @ticket.package.user.first_name %> ( <%= current_user.first_name %>) your payment for <strong>£<%= @ticket.package.price+15 %></strong> has been successful!
 
 </h2> 
 
-<p>An email will be sent to you with all the updated information</p>
-<p>Customer services will also send an email to the email address you provided when you signed up confirming a convenient time to give you a call to confirm your passport details</p>
+<p>An email will be sent to <%= @ticket.package.user.email %> you with all the information for your flight to <%= @ticket.destination.name%> staying at the <%= @ticket.package.hotel.name %> </p>
+<p><%= @ticket.airline %> Customer services will also send an email to the email address you provided when you signed up confirming a convenient time to give you a call to confirm your passport details</p>
 
 <%= link_to 'Holiday Listing', packages_path %>
