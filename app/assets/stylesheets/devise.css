@@ -3,8 +3,22 @@
   margin-top: 205px;
 }
 
-.new_user{
+.new_user {
 	width:50em;
 	margin:20px auto;
-	
+}
+
+#devise_1 {
+	margin-top: 150px;
+	text-align: center;
+}
+
+#devise_1 {
+	background-image: url('lounge.jpg');
+	background-size: 100% 200%;
+	background-repeat: no-repeat;
+}
+
+#devise_1 h2 {
+	color: black;
 }
