@@ -3,23 +3,26 @@
   margin-top: 205px;
 }
 
-.new_user {
+.new_user{
 	width:50em;
 	margin:20px auto;
+	
 }
 
-#devise_1 {
-	margin-top: 150px;
-	text-align: center;
+#sign_up{
+	margin-top: 10%;
+	text-align: center;	
+	background-image: image-url('case.jpg');
 	color: black;
-}
-
-#devise_1 {
-	background-image: image-url('lounge.jpg');
-	background-size: 100% 200%;
 	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: center;
 }
 
-#devise_1 h2 {
-	color: black;
+.input {
+	width: 200%;
+}
+ 
+#logout {
+	color: pink;
 }
