@@ -1,3 +1,5 @@
+
+
 <% content_for :body do %>
 <body id= "charge">
   <% end %>
@@ -23,12 +25,15 @@
 <p>Thank you <%= current_user.first_name %> your payment for <strong>£<%= @ticket.package.price+15 %></strong> has been successful!</p><br>
  
 
-<p>An email will be sent to <%= @ticket.package.user.email %> you with all the information for your flight to <%= @ticket.destination.name%> staying at the <%= @ticket.package.hotel.name %>hotel</p><br>
+<p>An email will be sent to <%= @ticket.package.user.email %> you with all the information for your flight to <%= @ticket.destination.name%> staying at the <%= @ticket.package.hotel.name %> hotel</p><br>
 <p><%= @ticket.airline %> Customer services will also send an email to the email address you provided when you signed up confirming a convenient time to give you a call to confirm your passport details</p><br>
 
 <p>If you have any other questions please do not hesitate to contact <%= @ticket.airline %> customer services.</p><br>
 
 <p> Thank you for choosing Holiday Transfer </p><br>
-</body>
+
+<p>&copy; Holiday Transfer</p>
 
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+</body>
+
