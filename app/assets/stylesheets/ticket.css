@@ -10,6 +10,11 @@
 
 .details{
 	text-align: center;
+	background-color: white;
+	opacity: 0.5;
+	margin-top: 5%;
+	margin-left: 25%;
+	width:50%;
 }
 
 p{
@@ -23,7 +28,6 @@ p{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	color: red;
+	color: black;
 /*	background-size: 80%;*/
-
 }
