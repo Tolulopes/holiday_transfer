@@ -1,12 +1,19 @@
 #charge {
-	/*margin-top: 5%;*/
-	background-image: url('visa.jpg');
-	background-position: right ;
+	background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcReUywDI1cbZYpqpss5a66vjkeKacqhqEwcfzLAr3MHMxdHqNSd');
+/*	background-position: right ;*/
 	background-repeat: no-repeat; 
-	/*text-align: center;*/
+	margin-top: 10%;
+	text-align: center;
 }
 
-h1 {
-	margin-top: 50%;
+/*p {
+	margin-top: 15%;
+}*//*.confirm {
+	margin-top: 0;
 }
 
+
+#charge {
+	margin-top: 0;
+	margin-bottom: 0;
+}*/
