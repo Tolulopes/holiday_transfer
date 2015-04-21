@@ -316,7 +316,7 @@
 			this.animation.time = t;
 		}
 
-		var dt = 0.001 * (t - this.animation.time);
+		var dt = 0.003 * (t - this.animation.time);
 
 		var n = 0;
 
