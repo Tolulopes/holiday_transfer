@@ -31,3 +31,11 @@ p {
 	color: black;
 /*	background-size: 80%;*/
 }
+
+#tc {
+	background-color: pink;
+}
+
+.modal-backdrop{
+	display: none;
+}
