@@ -3,20 +3,20 @@
 
 <% content_for :body do %>
 <body id ="pack_show">
-<% end %>
+  <% end %>
 
-<strong>Ticker Owner</strong>
+  <strong>Ticker Owner</strong>
   <%= @package.user.first_name %><br>
 
-<strong>Hotel:</strong>
+  <strong>Hotel:</strong>
   <%= @package.hotel.name %><br>
 
-<strong>Attraction:</strong>
-<div class="pac_show"
-<ul>
-  <% @package.attractions.each do |attraction| %>
+  <strong>Attraction:</strong>
+  <div class="pac_show"
+  <ul>
+    <% @package.attractions.each do |attraction| %>
     <li><%= attraction.name %>:  <%= attraction.description %></li>
-  <% end %>
+    <% end %>
   </ul>
 </div>
 
@@ -26,8 +26,8 @@
 
 <% if @package.status == "Available" %>
 
-  <button><%= link_to 'Buy Ticket', ticket_path %></button>
-  
+<button><%= link_to 'Buy Ticket', ticket_path %></button>
+
 <%end%><br>
 
 

@@ -75,20 +75,20 @@
             </div>
             <div class="modal-footer">
               <a class="btn btn-default" data-dismiss="modal">Close</a>
-              </div>
             </div>
-          </form>
-        </div>
-        <script>
-          $(document).ready(function(){
-            $('#myModal').on('shown.bs.modal', function () {
-              $('#myInput').focus()
-            })
-          });
-        </script>
+          </div>
+        </form>
       </div>
+      <script>
+        $(document).ready(function(){
+          $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+          })
+        });
+      </script>
     </div>
   </div>
-  <!--  </div> -->
+</div>
+<!--  </div> -->
 
-  <p><%= link_to 'Back', packages_path %></p>
+<p><%= link_to 'Back', packages_path %></p>
