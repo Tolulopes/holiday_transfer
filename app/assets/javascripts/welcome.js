@@ -1,9 +1,9 @@
 $(document).ready(function(){
 // console.log('ready');
   $(function(){
-    var slides = $('.slideShow>li'); 
+    var $slides = $('.slideShow>li'); 
     var slideCount = 0;
-    var totalSlides = slides.length;
+    var totalSlides = $slides.length;
     var slideCache = [];
 
     (function preloader(){
@@ -22,10 +22,13 @@ $(document).ready(function(){
     }());
 
     function slideShow(){
-      slides.eq(slideCount).fadeIn(900).delay(900).fadeOut(1000, function(){
-        slideCount < totalSlides - 1 ? slideCount ++ :slideCount = 0;
-        slideShow();
-      });
+      slides.eq(slideCount)
+        .fadeIn(900)
+        .delay(900)
+        .fadeOut(1000, function(){
+          slideCount < totalSlides - 1 ? slideCount ++ :slideCount = 0;
+          slideShow();
+        });
     }
   });
 });

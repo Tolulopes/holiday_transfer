@@ -27,7 +27,7 @@
         $(next).fadeIn(o.fadeSpeed, function() {
           $(next).delay(o.pauseSpeed).fadeOut(o.fadeOutSpeed, function() {
             var next = $(this).next();
-            if (next.length == 0){
+            if (next.length === 0){
               next = $(obj).children(':first');
             }
             $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
@@ -40,12 +40,4 @@
 
 $(document).ready(function() {
   $('.rotate').rotaterator({fadeSpeed:900});
-
-   // handler = Gmaps.build('Google');
-   // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-   //   markers = handler.addMarkers($("#map").data("json"));
-   //   console.log(handler,markers)
-   //   handler.bounds.extendWith(markers);
-   //   handler.fitMapToBounds();
-   // });
 });
