@@ -9,7 +9,7 @@ $(document).ready(function(){
     (function preloader(){
       if(slideCount < totalSlides){
         slideCache[slideCount] = new Image();
-        slideCache[slideCount].src = slides.eq(slideCount).find('img').attr('src');
+        slideCache[slideCount].src = $slides.eq(slideCount).find('img').attr('src');
         slideCache[slideCount].onload = function(){
           slideCount++;
           preloader();
@@ -22,7 +22,7 @@ $(document).ready(function(){
     }());
 
     function slideShow(){
-      slides.eq(slideCount)
+      $slides.eq(slideCount)
         .fadeIn(900)
         .delay(900)
         .fadeOut(1000, function(){
